@@ -2,7 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-const mongoKey = null;
+//********** import des routes **********
+const mealRoute = require("./routes/meal");
+const orderRoute = require("./routes/order");
+const adminRoute = require("./routes/admin");
+
+const mongoKey = "TqZih5ejnapcC9F";
 
 mongoose
 	.connect(
@@ -29,6 +34,8 @@ app.use((req, res, next) => {
 
 //********** routes **********
 
-app.use("uri", routes);
+app.use("/miam", mealRoute);
+app.use("/miam/order", orderRoute);
+app.use("/miam/admin", adminRoute);
 
 module.exports = app;
