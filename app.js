@@ -8,10 +8,13 @@ const mealRoute = require("./routes/meal");
 const orderRoute = require("./routes/order");
 const adminRoute = require("./routes/admin");
 
-const mongoURL = process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose
-	.connect(`${mongoURL}`, { useNewUrlParser: true, useUnifiedTopology: true })
+	.connect(`${MONGO_URL}`, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
 	.then(() => console.log("Connexion à MongoDB réussie !"))
 	.catch(() => console.log("Connexion à MongoDB échouée !"));
 
