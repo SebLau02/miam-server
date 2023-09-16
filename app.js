@@ -8,10 +8,8 @@ const mealRoute = require("./routes/meal");
 const orderRoute = require("./routes/order");
 const adminRoute = require("./routes/admin");
 
-const MONGO_URL = process.env.MONGO_URL;
-
 mongoose
-	.connect(`${MONGO_URL}`, {
+	.connect(`${process.env.MONGO_URL}`, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
@@ -35,8 +33,8 @@ app.use((req, res, next) => {
 
 //********** routes **********
 
-app.use("/miam", mealRoute);
-app.use("/miam/order", orderRoute);
-app.use("/miam/admin", adminRoute);
+app.use(`${process.env.MEAL_ROUTE}`, mealRoute);
+app.use(`${process.env.ORDER_ROUTE}`, orderRoute);
+app.use(`${process.env.ADMIN_ROUTE}`, adminRoute);
 
 module.exports = app;
