@@ -1,0 +1,2 @@
+nom: miam-server
+MONGO_URL: ${{ secrets.MONGO_URL }}
