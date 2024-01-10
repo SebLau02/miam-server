@@ -1,26 +1,9 @@
 const http = require("http");
 const app = require("./app");
 const express = require("express");
-const { Server } = require("socket.io");
 const cors = require("cors");
 
 const server = http.createServer(app);
-
-const io = new Server(server, {
-	cors: {
-		origin: "*",
-		methods: ["GET", "POST"],
-	},
-});
-
-io.on("connection", (socket) => {
-	console.log(`User Connected: ${socket.id}`);
-
-	socket.on("send_message", (data) => {
-		console.log(data);
-		socket.broadcast.emit("receive_message", data);
-	});
-});
 
 const normalizePort = (val) => {
 	const port = parseInt(val, 10);
