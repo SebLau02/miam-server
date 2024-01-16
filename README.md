@@ -14,4 +14,4 @@ Ce projet est le serveur de l'application [Miam](https://seblau02.github.io/miam
 
 This project is the server api of the [Miam](https://seblau02.github.io/miam/) application. It is my second server, so it isn't perfect and need to be improved. Routes and database URL are hidden in environment variables using GitHub secrets. It uses mongoDb as database to store meals and orders.
 
-### Technologies: Node.JS
+### Technologies: Node.JS, Express, MongoDb
