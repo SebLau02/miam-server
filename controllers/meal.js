@@ -34,9 +34,14 @@ exports.getOneMeal = (req, res, next) => {
 };
 
 exports.getMealFam = (req, res, next) => {
-	const { mealFamily } = req.query.mf;
+	const { mf } = req.params;
 
-	Promise.all([Dishes.find(), Starters.find(), Drinks.find(), Afters.find()])
+	Promise.all([
+		Dishes.findOne({ famille: mf }),
+		Starters.findOne({ famille: mf }),
+		Drinks.findOne({ famille: mf }),
+		Afters.findOne({ famille: mf }),
+	])
 		.then((famille) => {
 			res.status(200).json({ message: "Famille trouvé", famille });
 		})
@@ -166,19 +171,19 @@ exports.modifyMeal = (req, res, next) => {
 	Promise.all([
 		Dishes.findOneAndUpdate(
 			{ _id: mealId },
-			{ name, image, description, price, famille }
+			{ name, image, description, price, famille },
 		),
 		Starters.findOneAndUpdate(
 			{ _id: mealId },
-			{ name, image, description, price, famille }
+			{ name, image, description, price, famille },
 		),
 		Drinks.findOneAndUpdate(
 			{ _id: mealId },
-			{ name, image, description, price, famille }
+			{ name, image, description, price, famille },
 		),
 		Afters.findOneAndUpdate(
 			{ _id: mealId },
-			{ name, image, description, price, famille }
+			{ name, image, description, price, famille },
 		),
 	])
 		.then((meal) => {

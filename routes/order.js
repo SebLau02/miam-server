@@ -9,7 +9,7 @@ const admin = require("../middleware/admin");
 
 //********** routes **********
 
-//********** crééer une commande et envoyer a l'admin **********
+//********** crééer une commande et envoyer à l'admin **********
 
 router.post("/", orderCtrl.mealOrder);
 
