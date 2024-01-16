@@ -20,7 +20,7 @@ Ce serveur contient:
     	- gérer les commandes: consulter, supprimer, historique
     	- gérer les plats proposés: ajouter, supprimer, modifier
 
-La documentation complète est [ici](https://github.com/SebLau02/l-ardillon-shop-back/blob/main/docs/Documentation.md)
+La documentation complète est [ici](https://github.com/SebLau02/miam-server/blob/main/docs/Documentation.md)
 
 L'url de base de l'API est [là](https://miam-server.vercel.app/)
 
@@ -45,3 +45,5 @@ This server contains:
 <img src="./assets/illustration1.png" alt="résultats sous forme json" width="800">
 <img src="./assets/illustration2.png" alt="résultats sous forme json" width="800">
 <img src="./assets/illustration3.png" alt="résultats sous forme json" width="800">
+
+#### [Documentation](https://github.com/SebLau02/miam-server/blob/main/docs/Documentation.md)
